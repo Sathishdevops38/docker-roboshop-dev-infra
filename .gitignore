@@ -35,3 +35,156 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+Ignore all environment variables, which often contain secrets and should never be committed.
+
+Use a template file (e.g., .env.example) for structure instead.
+
+.env
+*.env
+.env.local
+
+Ignore locally generated Docker-related files and runtime data.
+
+This prevents accidentally committing local volume mounts or bind-mounts.
+
+volumes/
+data/
+local_db/
+
+Docker build context file that is often created during local development
+
+to override environment specific settings.
+
+docker-compose.override.yml
+docker-compose.local.yml
+
+Docker build cache (if using local caching outside of DIND)
+
+.docker_cache/
+
+Ignore custom entrypoint scripts that are specific to your local machine
+
+and not meant for the container image build process.
+
+local-entrypoint.sh
+
+---------------------------------------------------------
+
+2. OPERATING SYSTEM & EDITOR IGNORES
+
+---------------------------------------------------------
+
+macOS
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Windows
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+Linux
+
+*~
+
+Vim/Nano/Emacs backup files
+
+*.swp
+*.bak
+
+IDE/Editor files (Customize as needed)
+
+.vscode/
+.idea/
+*.iml
+.sublime-workspace
+
+---------------------------------------------------------
+
+3. COMMON LANGUAGE/FRAMEWORK ARTIFACTS
+
+(Add/Remove sections based on your project stack)
+
+---------------------------------------------------------
+
+Python
+
+pycache/
+*.pyc
+*.pyd
+.Python
+.venv/
+env/
+pip-log.txt
+dist/
+build/
+htmlcov/
+
+Node.js
+
+Exclude the node modules directory, which is usually installed
+
+inside the container during the Docker build process.
+
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+Java / Maven / Gradle
+
+target/
+*.class
+*.jar
+*.war
+*.ear
+/bin/
+
+Go
+
+*.exe
+*.test
+*.out
+
+Ruby
+
+vendor/bundle
+.bundle/
+
+C/C++
+
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+---------------------------------------------------------
+
+4. TERRAFORM/INFRASTRUCTURE AS CODE (if used)
+
+---------------------------------------------------------
+
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+---------------------------------------------------------
+
+5. TEST/REPORTING
+
+---------------------------------------------------------
+
+/coverage/
+/reports/
+
+=========================================================
+
+END OF FILE
+
+=========================================================
