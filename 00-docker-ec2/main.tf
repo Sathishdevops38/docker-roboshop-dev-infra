@@ -23,4 +23,13 @@ resource "aws_iam_instance_profile" "docker" {
   role = "BastionTerraformAdmin"
 }
 
+resource "aws_vpc_security_group_ingress_rule" "example" {
+  security_group_id = local.sg_id
+
+  cidr_ipv4   = "0.0.0.0/0"
+  from_port   = 22
+  ip_protocol = "tcp"
+  to_port     = 22
+}
+
 
