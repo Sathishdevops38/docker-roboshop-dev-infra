@@ -2,4 +2,4 @@ FROM almalinux:9
 RUN echo "This is docker learning"
 RUN dnf install nginx -y
 RUN dnf clean all
-CMD ["ngninx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
