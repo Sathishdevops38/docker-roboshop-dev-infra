@@ -1,0 +1,3 @@
+FROM almalinux:9
+RUN echo "this is copy file from dir to image /tmp"
+COPY Hello/ /tmp/
