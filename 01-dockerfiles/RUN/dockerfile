@@ -1,0 +1,6 @@
+FROM almalinux:9
+RUN echo "This is docker learning"
+RUN sudo dnf install nginx -y
+RUN sudo systemctl start nginx
+RUN sudo systemctl enable nginx
+CMD ["ngninx", "-g", "daemon off;"]

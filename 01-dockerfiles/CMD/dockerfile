@@ -1,0 +1,3 @@
+FROM almalinux:9
+RUN echo "learn about CMD instruction"
+CMD ["sleep", "1000s"]
