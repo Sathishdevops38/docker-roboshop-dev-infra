@@ -38,3 +38,4 @@ public class Ship {
         return String.format("Distance: %d Cost: %f", distance, cost);
     }
 }
+
