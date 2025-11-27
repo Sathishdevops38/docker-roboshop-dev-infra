@@ -1,1 +1,1 @@
-for i in mongodb catalogue cart mysql payment shipping user frontend; do cd $i; docker build -t $i:v1 .;cd ..;done
+for i in mongodb catalogue user cart mysql payment shipping  frontend; do cd $i; docker build -t $i:v1 .;cd ..;done
