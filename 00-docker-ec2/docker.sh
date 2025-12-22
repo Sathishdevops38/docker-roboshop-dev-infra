@@ -11,9 +11,4 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker ec2-user
 
-#install Grafana
-wget -q -O gpg.key https://rpm.grafana.com/gpg.key
-sudo rpm --import gpg.key
-cp repo /etc/yum.repos.d/grafana.repo
-sudo dnf install grafana-enterprise
 
