@@ -4,7 +4,7 @@ data "aws_ami" "ami_2023" {
 
   filter {
     name   = "name"
-    values = ["devops-practice-ami"] # Filter for AL2023 AMIs, adjust for arm64 if needed
+    values = ["devops-practice"] # Filter for AL2023 AMIs, adjust for arm64 if needed
   }
 
   filter {
